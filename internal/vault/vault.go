@@ -40,7 +40,7 @@ func (v *Vault) Get(name string) ([]byte, error) {
 
 	data, ok := v.files[name]
 	if !ok {
-		return nil, fmt.Errorf("get %q: %w", name, ErrNotFound)
+		return nil, fmt.Errorf("get %q: %v", name, ErrNotFound)
 	}
 
 	out := make([]byte, len(data))
@@ -54,7 +54,7 @@ func (v *Vault) Delete(name string) error {
 	defer v.mu.Unlock()
 
 	if _, ok := v.files[name]; !ok {
-		return fmt.Errorf("delete %q: %w", name, ErrNotFound)
+		return fmt.Errorf("delete %q: %v", name, ErrNotFound)
 	}
 
 	delete(v.files, name)
