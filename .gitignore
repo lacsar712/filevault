@@ -1,0 +1,18 @@
+# Binaries
+/filevault
+*.exe
+*.test
+
+# Go
+/vendor/
+
+# IDE
+.idea/
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Author-only artifacts (do not ship to agent workspace)
+/author/
